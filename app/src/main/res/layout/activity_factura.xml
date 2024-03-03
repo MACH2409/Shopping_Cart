@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+android:id="@+id/main"
+xmlns:android="http://schemas.android.com/apk/res/android"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:orientation="vertical"
+android:padding="16dp">
+
+<TextView
+    android:id="@+id/tvTituloFactura"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Detalle de la Factura"
+    android:textSize="24sp"
+    android:layout_gravity="center_horizontal"/>
+
+<androidx.recyclerview.widget.RecyclerView
+    android:id="@+id/rvListaProductosFactura"
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:layout_weight="1"/>
+
+    <TextView
+        android:id="@+id/tvSubtotal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Subtotal: $0.00"
+        android:textSize="16sp"/>
+
+    <TextView
+        android:id="@+id/tvImpuestos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Impuestos (15%): $0.00"
+        android:textSize="16sp"/>
+
+    <TextView
+        android:id="@+id/tvDescuento"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Descuento: -$0.00"
+        android:textSize="16sp"
+        android:visibility="gone"/>
+
+    <TextView
+        android:id="@+id/tvTotalFactura"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Total: $0.00"
+        android:textSize="20sp"
+        android:layout_marginTop="16dp"/>
+
+</LinearLayout>

@@ -1,5 +1,6 @@
 package com.example.shopping_cart
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Adapter
@@ -22,11 +23,21 @@ class CarroComprasActivity : AppCompatActivity() {
         carroCompras = intent.getSerializableExtra("carro_compras") as ArrayList<Producto>
 
         setupRecyclerView()
+
+        binding.btnComprar.setOnClickListener {
+            abrirFacturaActivity()
+        }
     }
 
     fun setupRecyclerView(){
         binding.rvListaCarro.layoutManager = LinearLayoutManager(this)
         adapter = AdaptadorCarroCompras(binding.tvTotal, carroCompras)
         binding.rvListaCarro.adapter = adapter
+    }
+
+    private fun abrirFacturaActivity() {
+        val intent = Intent(this, FacturaActivity::class.java)
+        intent.putExtra("carro_compras", carroCompras)
+        startActivity(intent)
     }
 }
